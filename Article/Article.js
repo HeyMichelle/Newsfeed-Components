@@ -85,7 +85,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+    {
+    title: `World's Best Article`,
+    date:`18, February 2020`,
+    firstParagraph: `Hi, I am the first paragraph.`,
+    secondParagraph: `This is my second.`,
+    thirdParagraph: `This is the third.`,
+ }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -149,6 +156,7 @@ data.forEach((currentItem) => {
   const newArticle = articleComponent(currentItem.title, currentItem.date, currentItem.firstParagraph, currentItem.secondParagraph, currentItem.thirdParagraph);
   articlePanel.appendChild(newArticle);
 })
+
 
 
 /* 
