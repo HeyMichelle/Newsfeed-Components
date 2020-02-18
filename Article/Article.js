@@ -122,6 +122,16 @@ const data = [
 
   const expBtn = document.createElement('span');
   expBtn.classList.add('expandButton');
+  expBtn.textContent = "Click to Expand";
+   
+    expBtn.addEventListener('click', (event) => {
+      artDiv.classList.toggle("article-open");
+
+      if(expBtn.textContent != "Close"){
+        expBtn.textContent = "Close"
+      } else {
+        expBtn.textContent = "Click to Expand"
+      }})
 
   artDiv.appendChild(articleTitle);
   artDiv.appendChild(artDate);
