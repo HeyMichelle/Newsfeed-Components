@@ -9,6 +9,36 @@ let menuItems = [
   'Log Out'
 ];
 
+// Why is this grayed out if I put below the function?
+const header = document.querySelector('.header');
+
+// use const or function?
+function openMenu(arr) {
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+
+    const links = document.createElement('ul');
+    menu.appendChild(links);
+
+    menuItems.forEach((link) => {
+      const item = document.createElement('li');
+      item.textContent = link;
+      item.style.cursor = 'pointer';
+      links.appendChild(item);
+    });
+    
+    
+    const menuBtn = document.querySelector('.menu-button');
+    menuBtn.addEventListener('click', (e) => {
+      menu.classList.toggle('menu--open');
+    });
+    
+    return menu;
+}
+
+header.appendChild(openMenu(menuItems));
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
