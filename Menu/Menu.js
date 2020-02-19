@@ -27,16 +27,26 @@ function openMenu(arr) {
       links.appendChild(item);
     });
     
-    
+    // should I put this within or outside of the function? If I put it outside will it still recognize the menu variable/div that was created?
     const menuBtn = document.querySelector('.menu-button');
     menuBtn.addEventListener('click', (e) => {
       menu.classList.toggle('menu--open');
+      gsap.from(".menu-button", {duration: 1, opacity: 0, x: 150, stagger: 0.25});
+        const ulItem = document.querySelector('.menu.menu--open');
+        ulItem.classList.add('ulItems');
+      gsap.from(".ulItems", {duration: 1, opacity: 0, y: 150, stagger: 0.25});
     });
-    
+   
     return menu;
 }
 
 header.appendChild(openMenu(menuItems));
+
+
+
+// function show() {
+//   document.querySelector('.menu').classList.toggle('active');
+// }
 
 
 /* 
