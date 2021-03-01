@@ -9,6 +9,46 @@ let menuItems = [
   'Log Out'
 ];
 
+// Why is this grayed out if I put below the function?
+const header = document.querySelector('.header');
+
+// use const or function?
+function openMenu(arr) {
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+
+    const links = document.createElement('ul');
+    menu.appendChild(links);
+
+    menuItems.forEach((link) => {
+      const item = document.createElement('li');
+      item.textContent = link;
+      item.style.cursor = 'pointer';
+      links.appendChild(item);
+    });
+    
+    // should I put this within or outside of the function? If I put it outside will it still recognize the menu variable/div that was created?
+    const menuBtn = document.querySelector('.menu-button');
+    menuBtn.addEventListener('click', (e) => {
+      menu.classList.toggle('menu--open');
+      gsap.from(".menu-button", {duration: 1, opacity: 0, x: 150, stagger: 0.25});
+        const ulItem = document.querySelector('.menu.menu--open');
+        ulItem.classList.add('ulItems');
+      gsap.from(".ulItems", {duration: 1, opacity: 0, y: 150, stagger: 0.25});
+    });
+   
+    return menu;
+}
+
+header.appendChild(openMenu(menuItems));
+
+
+
+// function show() {
+//   document.querySelector('.menu').classList.toggle('active');
+// }
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
